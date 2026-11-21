@@ -1,0 +1,26 @@
+{
+  "checks": [
+    "renders eight candidate rows without a server",
+    "198 candidates and complete watchlist",
+    "watchlist filter has exactly forty records",
+    "beyond-floor filter has 158 records",
+    "search returns the named protocol",
+    "empty results have a visible recovery action",
+    "pagination changes the result set",
+    "name sort exposes ascending aria state",
+    "comparison renders two distinct research cards",
+    "methodology displays actual calibration",
+    "recorded-token universe is separate",
+    "excluded-product universe accounts for 144 protocols",
+    "sensitivity controls change the visible value and label",
+    "reset model restores baseline values",
+    "details include formula, peer evidence and six farm steps",
+    "Escape closes the details dialog",
+    "JSON export has the sealed date in its name",
+    "mobile layout does not overflow the page",
+    "no runtime errors",
+    "no HTTP requests from the dashboard"
+  ],
+  "errors": [],
+  "networkRequests": []
+}

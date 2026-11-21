@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Launch Atlas — evidence before opportunity</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="../data.js" defer></script>
+  <script src="valuation.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="#board" aria-label="Launch Atlas home"><span class="brand-mark">↗</span> LAUNCH<span>ATLAS</span><sup>RESEARCH TERMINAL</sup></a>
+    <nav aria-label="Main navigation">
+      <button class="nav-button active" data-view="board">Radar</button>
+      <button class="nav-button" data-view="method">Methodology</button>
+      <button class="nav-button" data-view="compare">Compare <span id="compare-count">0</span></button>
+    </nav>
+    <span class="snapshot-pill"><span></span> SEALED SNAPSHOT · <b id="snapshot-date">—</b></span>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="tiny-line"></span> THE PRE-TOKEN RESEARCH DESK</div>
+        <h1 id="hero-title">Find the signal.<br><span>Price the possibility.</span></h1>
+        <p>A transparent radar for protocols with <strong>no token recorded</strong>.<br>One sealed dataset. Comparable valuations. A plan behind every row.</p>
+        <div class="hero-note"><span>01 / SNAPSHOT, NOT A FORECAST</span><span>NO LIVE FEEDS · NO WALLET CONNECTION</span></div>
+      </div>
+      <div class="hero-chart" aria-label="Candidate category distribution by TVL">
+        <div class="chart-head"><span>CANDIDATE CAPITAL MAP</span><b>TVL SHARE</b></div>
+        <div id="capital-map" class="capital-map"></div>
+        <div id="capital-legend" class="capital-legend"></div>
+        <div class="chart-foot"><span>Capital ≠ token value</span><span id="capital-total">—</span></div>
+      </div>
+    </section>
+    <section class="metrics" aria-label="Snapshot coverage">
+      <div><span>PROTOCOLS SCREENED</span><strong id="metric-universe">—</strong><small>Entire sealed protocol universe</small></div>
+      <div><span>CANDIDATES RANKED</span><strong id="metric-candidates">—</strong><small>No token marker; product filters applied</small></div>
+      <div><span>WATCHLIST COVERAGE</span><strong id="metric-coverage">—</strong><small>Authoritative floor, never the ceiling</small></div>
+      <div><span>OBSERVED TOKEN PEERS</span><strong id="metric-peers">—</strong><small>Positive market cap and TVL</small></div>
+    </section>
+
+    <section id="board-view" class="view">
+      <div class="section-heading"><div><div class="eyebrow dark">THE OPPORTUNITY SET</div><h2>Research radar <span id="visible-count">—</span></h2></div><div class="table-actions"><button id="export" class="button secondary">↓ Export visible rows</button><button id="toggle-sandbox" class="button secondary" aria-expanded="false">Model lab ↗</button></div></div>
+      <div class="notice"><span>i</span><p><strong>Implied market cap, not a promised launch.</strong> Values are model scenarios from a snapshot dated <span class="as-of"></span>. No issuance, airdrop, eligibility or return is verified.</p></div>
+      <section id="sandbox" class="sandbox" hidden aria-label="Valuation sensitivity controls">
+        <div><h3>Change the assumptions. See the consequences.</h3><p>Experimental values re-rank the browser view only. The exported official board keeps the baseline model.</p></div>
+        <label>Peer multiple scale <output id="scale-value">1.00×</output><input id="scale" type="range" min="0.5" max="2" step="0.05" value="1"></label>
+        <label>Growth influence <output id="growth-value">25%</output><input id="growth-weight" type="range" min="0" max="0.75" step="0.05" value="0.25"></label>
+        <button id="reset-model" class="button secondary">Reset baseline</button>
+      </section>
+      <div class="filterbar">
+        <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search protocol, category or chain" aria-label="Search protocols"><kbd>/</kbd></label>
+        <label class="select-label">CATEGORY<select id="category"><option value="all">All categories</option></select></label>
+        <label class="select-label">CHAIN<select id="chain"><option value="all">All chains</option></select></label>
+        <label class="select-label">UNIVERSE<select id="universe"><option value="candidates">Launch candidates</option><option value="live">Recorded tokens</option><option value="excluded">Excluded products</option></select></label>
+      </div>
+      <div class="subfilters"><div><button class="chip active" id="all-candidates">All candidates</button><button class="chip" id="watchlist-only" aria-pressed="false">Watchlist only</button><button class="chip" id="early-only" aria-pressed="false">Beyond the floor</button></div><span id="filter-status" aria-live="polite">—</span><button id="clear-filters" class="text-button">Clear filters</button></div>
+      <div class="table-scroll"><table id="radar-table"><thead><tr><th class="compare-cell"><span class="sr-only">Compare selection</span></th><th><button data-sort="rank">BASE RANK <span>↑</span></button></th><th><button data-sort="name">PROTOCOL</button></th><th><button data-sort="tvl_usd">TVL</button></th><th><button data-sort="change_7d">7D TVL</button></th><th><button data-sort="implied_value_usd" id="value-heading">IMPLIED MCAP</button></th><th>EVIDENCE</th><th class="detail-cell">RESEARCH</th></tr></thead><tbody id="rows"></tbody></table></div>
+      <div id="empty-state" class="empty-state" hidden><h3>No protocols match these filters.</h3><p>Try another chain, category or search term.</p><button id="empty-reset" class="button secondary">Reset filters</button></div>
+      <div class="pagination"><span id="page-status">—</span><div><button id="previous" class="button secondary">← Previous</button><button id="next" class="button secondary">Next →</button></div></div>
+      <div class="bottom-insights"><article><span class="eyebrow dark">READ THE MODEL</span><h3>Every valuation has a paper trail.</h3><p>Category comparables, robust medians, capped growth and tracking age. Sparse peers pull toward the global median.</p><button class="text-button" data-view="method">Open methodology ↗</button></article><article><span class="eyebrow dark">FARM WITH A LIMIT</span><h3>Utility first. Rewards optional.</h3><p>Every research card includes a category-specific route, a planning budget, a review cadence and reasons to stop.</p><button class="text-button" id="open-first">Inspect the leading candidate ↗</button></article></div>
+    </section>
+
+    <section id="method-view" class="view method" hidden>
+      <div class="section-heading"><div><div class="eyebrow dark">A MODEL YOU CAN QUESTION</div><h2>Evidence, then assumptions.</h2></div><button class="button secondary" data-view="board">Back to radar ↗</button></div>
+      <div class="method-grid"><article class="method-card"><span class="number">01</span><h3>Start with observed comparables</h3><p>Use only protocols with a recorded token marker, positive market capitalization and positive TVL. Winsorize each market-cap / TVL ratio to 0.05–20× before taking medians.</p><div class="formula" id="peer-calibration">—</div><p>Market cap is not fully diluted value. Token supply, revenues and prospective issuance are not in the input.</p></article><article class="method-card"><span class="number">02</span><h3>Reduce sparse-category overconfidence</h3><p>A category's median is shrunk in log space toward the global peer median. Its own observations receive weight n / (n + 4); an empty category uses the global median.</p><div class="formula">multiple = exp(w · ln(category median)<br>+ (1 − w) · ln(global median))</div><p>The 4-observation prior strength is a disclosed modeling assumption, not a measured fact.</p></article><article class="method-card"><span class="number">03</span><h3>Adjust growth and tracking age</h3><p>Seven-day TVL growth is capped at −50% to +100%. The age input is days since DefiLlama began tracking, measured against the sealed date, capped at three years.</p><div class="formula">value = TVL × peer multiple<br>× (1 + 0.25 · capped growth)<br>× (0.75 + 0.25 · age / 1095)</div><p>Missing growth → 0%; missing age → factor 0.875. Both are surfaced and widen the scenario band.</p></article><article class="method-card"><span class="number">04</span><h3>Show uncertainty and exclusions</h3><p>Bands use shrunk peer quartiles with a minimum span of 0.65–1.5× the center. Sparse categories widen another 25%; each missing input adds 25%.</p><div class="formula">SCENARIO RANGE ≠ CONFIDENCE INTERVAL</div><p>Recorded tokens are separate. Wrapped, exchange, bridge and versioned products are filtered. Outside the watchlist, parent-protocol independence cannot be verified.</p></article></div>
+      <article class="source-card"><h3>The limits of the sealed record</h3><p id="source-text"></p><ul id="assumptions"></ul><p>No external data, network requests, wallet access, protocol-specific hardcoded valuations, or launch dates are used. Farm budgets are planning examples, not verified transaction quotes. This dashboard initiates no transactions.</p></article>
+      <div class="section-heading"><h3>Category calibration ledger</h3><span>Click a candidate's research card to inspect its actual peers.</span></div><div class="table-scroll"><table><thead><tr><th>CATEGORY</th><th>OBSERVED PEERS</th><th>CATEGORY MEDIAN</th><th>PRIOR WEIGHT</th><th>SHRUNK MULTIPLE</th></tr></thead><tbody id="category-ledger"></tbody></table></div>
+    </section>
+
+    <section id="compare-view" class="view" hidden><div class="section-heading"><div><div class="eyebrow dark">SIDE BY SIDE</div><h2>Compare the evidence.</h2></div><button class="button secondary" data-view="board">Choose protocols ↗</button></div><div id="compare-cards" class="compare-grid"></div></section>
+  </main>
+  <footer><span class="wordmark">↗ LAUNCH ATLAS</span><span>Evidence before opportunity. Snapshot research only.</span><span>LOCAL / OFFLINE / REPRODUCIBLE</span></footer>
+
+  <dialog id="detail" aria-labelledby="detail-name"><div class="dialog-head"><span>PROTOCOL RESEARCH / <b id="detail-rank"></b></span><button id="close-detail" class="icon-button" aria-label="Close protocol details">×</button></div><div id="detail-content"></div></dialog>
+  <div id="toast" role="status" hidden></div>
+</body>
+</html>

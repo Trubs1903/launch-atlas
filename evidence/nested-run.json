@@ -1,0 +1,25 @@
+{
+  "runtime": "Docker -> Podman -> Node 22.23.5",
+  "network": "none",
+  "readOnlyRepository": true,
+  "readOnlyRootFilesystem": true,
+  "droppedCapabilities": "ALL",
+  "noNewPrivileges": true,
+  "cpus": 1,
+  "memoryMiB": 1024,
+  "pids": 64,
+  "user": "1002:1002",
+  "byteIdentical": true,
+  "files": {
+    "board.json": "c3c6e471e544c549ae288e2612c1836f82b04ce6eb6c756e7aba4db8325a246a",
+    "dashboard/app.css": "2fc023a5bf5e5eb29db093e9cdcf7a6fb4a11842a5926bbe5dd9c9b9ac626341",
+    "dashboard/app.js": "5fac8cf0cd7c4c44bc5b6de5f124002343c6cdf094f8de34e492eb6ec08769ef",
+    "dashboard/index.html": "6ae14d9fd49de25ddf1e9e33dc2f9a0e1849296d1845b97a08cce1fbeb6d4399",
+    "dashboard/valuation.js": "42aa76deabeed79b15bd6db1a58c2c2dda8a26a2b6d272ca10d4fb403ea29b56",
+    "data.js": "2f4c415578fbb56dd50cd15693e759a4c1f6f0efc87eba490442c2f37f65421e",
+    "dossier.json": "5f51c93e2d6ee76aee5b9e4f0c32ad19b2773fa4a80cc4f018c0adcfe4670495",
+    "screenshots/1-board.jpg": "5436ba4a936994f9dfb7bb656412e05b7e0a3c5ccd28dc88626d7a49aa74a2c5",
+    "screenshots/2-detail.jpg": "0237cc98ce8c0ffbe8de2c9ca9dfdc86766fc4c4a6179506e5bd72f6a13b0aea",
+    "screenshots/3-filtered.jpg": "9b18d6d700f3340972ef650b213c7bc289726fc15dc48708caae3dca74d306ec"
+  }
+}
