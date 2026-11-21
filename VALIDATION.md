@@ -44,11 +44,12 @@ the two data/specification fixtures preserved every parsed value and removed
 formatting-only lines; the official authorship gate then passed. No application
 code or transcript was fabricated or rewritten to obtain that result.
 
-GitHub repository creation was attempted and refused with
-`Trubs1903 does not have the correct permissions to execute CreateRepository`.
-No remote repository, push or make.fun submission was created. The code and
-Git history remain available locally. A user-created empty public repository
-or credentials with repository-creation authority are needed for the GitHub path.
+GitHub repository creation initially failed with insufficient GitHub App
+permissions. After the account owner approved personal GitHub CLI access,
+creation and push succeeded at https://github.com/Trubs1903/launch-atlas.
+The repository is public, main tracks origin/main, and the required About
+homepage and topics are configured. This fixes GitHub publication; it does
+not constitute a make.fun submission or a server grading result.
 
 ## Pending official stages
 
