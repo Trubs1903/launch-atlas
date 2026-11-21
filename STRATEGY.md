@@ -39,7 +39,7 @@ available fields. The snapshot date is fixed and visible everywhere.
 
 No competitor code, dashboard or screenshot was imported. The sole vendored
 library is the kit's unchanged makefun-board.ts, required for dossier generation.
-The snapshot and public requirements are copied as fixtures/specification, not
+The snapshot and public requirements are copied as compact JSON fixtures/specification, not
 presented as authored work. All three submitted screenshots show this entry's
 actual browser rendering, not the starter.
 

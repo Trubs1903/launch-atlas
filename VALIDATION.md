@@ -21,6 +21,10 @@ not a claim of make.fun acceptance or a winning score.
   with `bash scripts/verify-nested.sh`.
 - Official kit vendor library and snapshot copied unchanged; SHA-256 of all
   twenty kit files was checked before implementation.
+- The repository's JSON fixtures/specification are serialized compactly to
+  avoid counting thousands of data-formatting lines as authored source. Their
+  parsed values are unchanged from the official files. The grader reads its
+  own mounted snapshot, not this convenience fixture.
 - An initial output-test assertion compared a string with the vendor's byte
   buffer, causing an excessive diagnostic and a container memory kill. Corrected
   the assertion to compare bytes; the full suite then passed within the limit.
