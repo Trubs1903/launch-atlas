@@ -30,6 +30,26 @@ not a claim of make.fun acceptance or a winning score.
   the assertion to compare bytes; the full suite then passed within the limit.
   The application builds themselves did not hit the memory limit.
 
+## Official preflight
+
+The official kit's `makefun check` completed with **14 passed, 0 failed,
+6 skipped, 5 checked at submission** for commit
+`f6871a7e54c443929b071073aaac5ee5d67e3b18`. This check is local and does not
+upload transcripts. It verified the transcript structure, timing, usage pricing,
+revision evidence, run record and authorship, in addition to entry packaging.
+
+The initial authorship calculation counted pretty-printed organizer JSON data
+as thousands of source lines, producing 7% coverage. Compact serialization of
+the two data/specification fixtures preserved every parsed value and removed
+formatting-only lines; the official authorship gate then passed. No application
+code or transcript was fabricated or rewritten to obtain that result.
+
+GitHub repository creation was attempted and refused with
+`Trubs1903 does not have the correct permissions to execute CreateRepository`.
+No remote repository, push or make.fun submission was created. The code and
+Git history remain available locally. A user-created empty public repository
+or credentials with repository-creation authority are needed for the GitHub path.
+
 ## Pending official stages
 
 The kit has no local judge. The official transcript preflight, GitHub intake,
