@@ -1,0 +1,23 @@
+{
+  "submission_id": "01a1ff47-fef6-75e8-a445-b9eeb78a1b60",
+  "stage": "rejected",
+  "repository": "https://github.com/Trubs1903/launch-atlas",
+  "submitted_commit": "b48478629e0acc441605350568b700262fed1da6",
+  "title": "Evidence-first radar with peer valuations and bounded farm plans",
+  "initial_receipt": "HTTP 202 at 2026-11-21T18:04:30.829Z",
+  "package": "Sanitized derived export, with withheld system prompt explicitly declared",
+  "counts": {
+    "pass": 25,
+    "fail": 1,
+    "skip": 3
+  },
+  "failed_checks": [
+    {
+      "check": "transcripts_run_record",
+      "reason": "the run record does not match the upload: its system prompt is marked withheld (\"Protected internal instructions and private reasoning removed in a derived expor\u2026\"), but an entry received from 18 November 2026 (12:00 UTC) uploads it as a system-prompt file or carries it in a session"
+    }
+  ],
+  "score": null,
+  "raw_transcript_uploaded": false,
+  "repeat_submission_attempted": false
+}

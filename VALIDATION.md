@@ -53,6 +53,27 @@ not constitute a make.fun submission or a server grading result.
 
 ## Pending official stages
 
+### Server result: rejected before grading
+
+Submission `01a1ff47-fef6-75e8-a445-b9eeb78a1b60` was received with HTTP 202
+on 2026-11-21 at 18:04:30.829 UTC, for source commit
+`b48478629e0acc441605350568b700262fed1da6`. The upload used a sanitized
+derived export, explicitly declaring the system prompt withheld. The raw
+transcript archive was not uploaded.
+
+The server subsequently rejected the entry on `transcripts_run_record`:
+the competition requires the harness system prompt in the upload and refuses
+the explicitly withheld status. Repository, ownership, licensing, secret and
+security checks, README/About, signature and recorded authorship checks passed.
+No application grade, dev rating, finalist place or prize was awarded.
+See evidence/server-result.json for the server result without private claim data.
+
+Another identical submission would not fix this requirement and has not been
+attempted. Progress requires an organizer-approved alternative that permits
+the protected context to stay withheld, or a genuinely independent compliant
+build environment whose required context can be shared. Do not falsify the
+run record or call a private instruction file ordinary metadata to bypass it.
+
 The kit has no local judge. The official transcript preflight, GitHub intake,
 submission receipt, server structural gate, dev rating and final ranking are
 distinct stages. Only recorded server responses establish those results.
